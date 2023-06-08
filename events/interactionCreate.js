@@ -1,14 +1,19 @@
-const { Events, EmbedBuilder } = require('discord.js');
+const { Events, EmbedBuilder, ActivityType } = require('discord.js');
 
 module.exports = {
     name: Events.InteractionCreate,
     async execute(interaction) {
+        const guildcount = await interaction.client.shard.fetchClientValues('guilds.cache.size');
+        interaction.client.user.setPresence({
+            activities: [{ name: `/help | ${guildcount.reduce((acc, guildCount) => acc + guildCount, 0)} Server`, type: ActivityType.Playing }],
+            status: 'online',
+        });
         if (interaction.isChatInputCommand()) {
             const command = interaction.client.commands.get(interaction.commandName);
 
             if (!command) {
                 const embed = new EmbedBuilder()
-                    .setTitle('Error')
+                    .setTitle('❌Error')
                     .setDescription(`No command matching ${interaction.commandName} was found.`);
                 await interaction.reply({ embeds: [embed], ephemeral: true });
                 console.error(`No command matching ${interaction.commandName} was found.`);
@@ -22,7 +27,7 @@ module.exports = {
                     await interaction.deferReply({ ephemeral: true });
                 }
                 const embed = new EmbedBuilder()
-                    .setTitle('Error')
+                    .setTitle('❌Error')
                     .setDescription('There was an error while executing this command!');
                 interaction.editReply({ embeds: [embed], ephemeral: true });
                 console.error(`Error executing ${interaction.commandName}`);
@@ -46,7 +51,7 @@ module.exports = {
 
             if (!command) {
                 const embed = new EmbedBuilder()
-                    .setTitle('Error')
+                    .setTitle('❌Error')
                     .setDescription(`No context menu matching ${interaction.commandName} was found.`);
                 await interaction.reply({ embeds: [embed], ephemeral: true });
                 console.error(`No context menu matching ${interaction.commandName} was found.`);
@@ -60,7 +65,7 @@ module.exports = {
                     await interaction.deferReply({ ephemeral: true });
                 }
                 const embed = new EmbedBuilder()
-                    .setTitle('Error')
+                    .setTitle('❌Error')
                     .setDescription('There was an error while executing this command!');
                 interaction.editReply({ embeds: [embed], ephemeral: true });
                 console.error(`Error executing ${interaction.commandName}`);
@@ -71,7 +76,7 @@ module.exports = {
 
             if (!command) {
                 const embed = new EmbedBuilder()
-                    .setTitle('Error')
+                    .setTitle('❌Error')
                     .setDescription(`No command matching ${interaction.customId} was found.`);
                 await interaction.reply({ embeds: [embed], ephemeral: true });
                 console.error(`No command matching ${interaction.customId} was found.`);
@@ -82,7 +87,7 @@ module.exports = {
                 await command.modal(interaction);
             } catch (error) {
                 const embed = new EmbedBuilder()
-                    .setTitle('Error')
+                    .setTitle('❌Error')
                     .setDescription('There was an error while executing this command!');
                 console.error(`Error executing ${interaction.customId}`);
                 console.error(error);
