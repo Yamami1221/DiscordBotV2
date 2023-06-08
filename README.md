@@ -26,20 +26,9 @@ git clone https://github.com/Yamami1221/DiscordBotV2.git
 
 ![bot create](https://i.imgur.com/luHPTGL.png "Step 2")
 
-3. Create `.env` in main folder and fill the required values. **Do not show anyone these!**
+1. Rename `.env.example` to `.env` and fill the required values. **Do not show anyone these!**
 
-For .env
-```bash
-TOKEN="YOUR_DISCORD_TOKEN"
-SPOTIFY_CLIENT_ID=""
-SPOTIFY_CLIENT_SECRET=""
-SPOTIFY_REFRESH_TOKEN=""
-GOOGLE_API_KEY="YOUR_GOOGLE_CUSTOM_SEARCH_API" ;to use image search
-CSE_ID="YOUR_GOOGLE_CDE_ID" ;to use image search
-YT_COOKIE="" ;Youtube cookie frow network tab developer tools in browser
-```
-
-4. Install Node.js v18.13.0 or higher by selecting the **Current** tab, and then **"OS Name" Installer**. [Click here](https://nodejs.org/en/download/current/) for the download page.
+2. Install Node.js v18.13.0 or higher by selecting the **Current** tab, and then **"OS Name" Installer**. [Click here](https://nodejs.org/en/download/current/) for the download page.
 
 ![nodejs](https://i.imgur.com/mtJcz5E.png "Step 4")
 
