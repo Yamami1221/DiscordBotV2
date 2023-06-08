@@ -4,7 +4,10 @@
   "description": "Discord bot for playing music and manage server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "deploy": "node deploy-commands.js && node index.js"
   },
   "repository": {
     "type": "git",
