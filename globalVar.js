@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 try {
-    const verifiedRolesPath = './data/verifiedRoles.json';
+    const verifiedDatasPath = './data/verifiedDatas.json';
     const verifySessionsPath = './data/verifySessions.json';
     const welcomeDatasPath = './data/welcomeDatas.json';
 
@@ -9,8 +9,8 @@ try {
         fs.mkdirSync('./data');
     }
 
-    if (!fs.existsSync(verifiedRolesPath)) {
-        fs.writeFileSync(verifiedRolesPath, JSON.stringify({}));
+    if (!fs.existsSync(verifiedDatasPath)) {
+        fs.writeFileSync(verifiedDatasPath, JSON.stringify({}));
     }
 
     if (!fs.existsSync(verifySessionsPath)) {
@@ -21,16 +21,16 @@ try {
         fs.writeFileSync(welcomeDatasPath, JSON.stringify({}));
     }
 
-    const verifiedRolesRaw = fs.readFileSync(verifiedRolesPath);
-    const verifiedRolesParsed = JSON.parse(verifiedRolesRaw);
-    const verifiedRoles = new Map(Object.entries(verifiedRolesParsed));
+    const verifiedDatasRaw = fs.readFileSync(verifiedDatasPath);
+    const verifiedDatasParsed = JSON.parse(verifiedDatasRaw);
+    const verifiedDatas = new Map(Object.entries(verifiedDatasParsed));
     const verifySessionsRaw = fs.readFileSync(verifySessionsPath);
     const verifySessionsParsed = JSON.parse(verifySessionsRaw);
     const verifySessions = new Map(Object.entries(verifySessionsParsed));
     const welcomeDatasRaw = fs.readFileSync(welcomeDatasPath);
     const welcomeDatasParsed = JSON.parse(welcomeDatasRaw);
     const welcomeDatas = new Map(Object.entries(welcomeDatasParsed));
-    module.exports = { verifiedRoles, verifySessions, welcomeDatas, verifiedRolesPath, verifySessionsPath, welcomeDatasPath };
+    module.exports = { verifiedDatas, verifySessions, welcomeDatas, verifiedDatasPath, verifySessionsPath, welcomeDatasPath };
 } catch (error) {
     console.error(error);
 }
