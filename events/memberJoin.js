@@ -10,7 +10,7 @@ module.exports = {
             const welcomeData = welcomeDatas.get(member.guild.id);
             const welcomeChannel = member.guild.channels.cache.find(channel => channel.id === welcomeData.welcomeChannelId);
             const embed = new EmbedBuilder()
-                .setTitle('Welcome!')
+                .setTitle('👋Welcome!')
                 .setDescription(`Welcome to **${member.guild.name}** ,<@${member.user.id}>! ${welcomeData.welcomeMessage}`);
             await welcomeChannel.send({ embeds: [embed] });
         } catch (error) {
