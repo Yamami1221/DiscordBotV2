@@ -20,7 +20,7 @@ module.exports = {
             const messages = await interaction.channel.messages.fetch({ limit: amount + 1 });
             await interaction.channel.bulkDelete(messages);
             const embed = new EmbedBuilder()
-                .setTitle('🗑️Clear')
+                .setTitle('🗑Clear')
                 .setDescription(`Deleted ${messages.size - 1} messages`);
             const reply = await interaction.channel.send({ embeds: [embed] });
             setTimeout(() => {

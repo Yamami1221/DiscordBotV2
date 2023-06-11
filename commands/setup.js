@@ -51,7 +51,7 @@ module.exports = {
             try {
                 if (welcomeDatas.has(interaction.guildId)) {
                     const embed = new EmbedBuilder()
-                        .setTitle('⚙️Setup')
+                        .setTitle('🔨Setup')
                         .setDescription('Welcome channel already set');
                     await interaction.editReply({ embeds: [embed] });
                 } else {
@@ -68,7 +68,7 @@ module.exports = {
                     fs.writeFileSync(welcomeDatasPath, JSON.stringify(welcomeChannelObject, null, 4));
 
                     const embed = new EmbedBuilder()
-                        .setTitle('⚙️Setup')
+                        .setTitle('🔨Setup')
                         .setDescription(`Welcome channel set to <#${welcomeChannel.id}>`);
                     await interaction.editReply({ embeds: [embed] });
                 }
@@ -84,7 +84,7 @@ module.exports = {
             try {
                 if (verifiedDatas.has(interaction.guildId)) {
                     const embed = new EmbedBuilder()
-                        .setTitle('⚙️Setup')
+                        .setTitle('🔨Setup')
                         .setDescription('Verified roles already set');
                     await interaction.editReply({ embeds: [embed] });
                 } else {
@@ -99,7 +99,7 @@ module.exports = {
                     fs.writeFileSync(verifiedDatasPath, JSON.stringify(verifiedRolesObject, null, 4));
 
                     const embed = new EmbedBuilder()
-                        .setTitle('⚙️Setup')
+                        .setTitle('🔨Setup')
                         .setDescription(`Verified role set to <@&${verifiedRole.id}>`);
                     await interaction.editReply({ embeds: [embed] });
                 }
