@@ -6,7 +6,6 @@ const { musicPlayerDatas, musicPlayerDatasPath } = require('../globalVar');
 module.exports = {
     name: Events.GuildCreate,
     async execute(guild) {
-        console.log(`Joined a new guild: ${guild.name}`);
         const embed = new EmbedBuilder()
             .setTitle('👋Hello!')
             .setDescription(`Hello! I'm **${guild.client.user.username}**. Thanks for inviting me to your server!`);
