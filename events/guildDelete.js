@@ -6,7 +6,7 @@ module.exports = {
         console.log(`Left a guild: ${guild.name}`);
         const embed = new EmbedBuilder()
             .setTitle('👋Bye!')
-            .setDescription(`Bye! I'm **${guild.client.user.username}**. Thanks for having me in your server!`);
+            .setDescription('Bye! Thanks for having me in your server!\nHope to see you again!');
         await guild.systemChannel.send({ embeds: [embed] });
     },
 };
