@@ -1,1 +1,15 @@
-{}
+{
+    "1026523517367357581": {
+        "queue": [],
+        "isPlaying": false,
+        "volume": 0.5,
+        "loop": false,
+        "loopQueue": false,
+        "autoPlay": false,
+        "sound8d": false,
+        "nightcore": false,
+        "vaporwave": false,
+        "bassboost": false,
+        "timer": null
+    }
+}
