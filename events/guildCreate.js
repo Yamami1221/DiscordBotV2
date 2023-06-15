@@ -22,6 +22,7 @@ module.exports = {
             nightcore: false,
             vaporwave: false,
             bassboost: false,
+            timer: null,
         };
         musicPlayerDatas.set(guild.id, guildMusicPlayer);
         const guildMusicPlayerDataObject = Object.fromEntries(musicPlayerDatas);
