@@ -13,9 +13,8 @@ module.exports = {
         const guildMusicPlayer = {
             queue: [],
             isPlaying: false,
-            volume: 0.5,
+            volume: 0.2,
             loop: false,
-            loopQueue: false,
             autoPlay: false,
             sound8d: false,
             nightcore: false,
